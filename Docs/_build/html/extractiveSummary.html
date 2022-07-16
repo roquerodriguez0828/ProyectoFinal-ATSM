@@ -19,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
     <link rel="prev" title="Summarizer module" href="Summarizer.html" /> 
 </head>
 
@@ -42,6 +43,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Proyecto de grado</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Summarizer.html">Summarizer module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">extractiveSummary module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
 </ul>
 </li>
 </ul>
@@ -73,14 +75,9 @@
              
   <section id="module-extractiveSummary">
 <span id="extractivesummary-module"></span><h1>extractiveSummary module<a class="headerlink" href="#module-extractiveSummary" title="Permalink to this heading"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">ExtractiveSummarization</span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Clase ExtractiveSummarization correspondiente al algoritmo base de metodo extractivo de resumen.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.calculate_average_score">
-<span class="sig-name descname"><span class="pre">calculate_average_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.calculate_average_score" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="extractiveSummary.calculate_average_score">
+<span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">calculate_average_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_weight</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#extractiveSummary.calculate_average_score" title="Permalink to this definition"></a></dt>
 <dd><p>Metodo para calcular el threshold minimo de seleccion de oraciones relevantes</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
@@ -98,9 +95,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.calculate_sentence_scores">
-<span class="sig-name descname"><span class="pre">calculate_sentence_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency_table</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.calculate_sentence_scores" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="extractiveSummary.calculate_sentence_scores">
+<span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">calculate_sentence_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency_table</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.calculate_sentence_scores" title="Permalink to this definition"></a></dt>
 <dd><p>Metodo calcular el puntaje de las oraciones, basado en la tabla de frecuencia</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
@@ -121,9 +118,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.create_frequency_table">
-<span class="sig-name descname"><span class="pre">create_frequency_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.create_frequency_table" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="extractiveSummary.create_frequency_table">
+<span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">create_frequency_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.create_frequency_table" title="Permalink to this definition"></a></dt>
 <dd><p>Metodo para crear la tabla de frecuencia</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
@@ -144,9 +141,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.get_article_summary">
-<span class="sig-name descname"><span class="pre">get_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.get_article_summary" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="extractiveSummary.get_article_summary">
+<span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">get_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.get_article_summary" title="Permalink to this definition"></a></dt>
 <dd><p>Metodo encargado de seleccionar las oraciones que exceden el threshold establecido.</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
@@ -170,9 +167,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.run_article_summary">
-<span class="sig-name descname"><span class="pre">run_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.run_article_summary" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="extractiveSummary.run_article_summary">
+<span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">run_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">article</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.run_article_summary" title="Permalink to this definition"></a></dt>
 <dd><p>Metodo general que unifica todos los metodos y genera el resumen.</p>
 <dl class="simple">
 <dt>Inputs:</dt><dd><dl class="field-list simple">
@@ -193,8 +190,6 @@
 </dl>
 </dd></dl>
 
-</dd></dl>
-
 </section>
 
 
@@ -202,6 +197,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Summarizer.html" class="btn btn-neutral float-left" title="Summarizer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="main.html" class="btn btn-neutral float-right" title="main module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

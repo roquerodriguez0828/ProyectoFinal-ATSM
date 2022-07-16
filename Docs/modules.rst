@@ -6,3 +6,4 @@ Proyecto de grado
 
    Summarizer
    extractiveSummary
+   main
