@@ -79,7 +79,7 @@ def calculate_average_score(sentence_weight) -> int:
 	for entry in sentence_weight:
 		sum_values += sentence_weight[entry]
 	#getting sentence average value from source text
-	average_score = (sum_values / len(sentence_weight))*0.3
+	average_score = (sum_values / len(sentence_weight))
 	return average_score
 
 def get_article_summary(sentences, sentence_weight, threshold):
