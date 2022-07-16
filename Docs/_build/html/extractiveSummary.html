@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>extractiveSummary module &mdash; Autonomous Text Summarization Model (ATSM) 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Summarizer module" href="Summarizer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Autonomous Text Summarization Model (ATSM)
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Proyecto de grado</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Summarizer.html">Summarizer module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">extractiveSummary module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Autonomous Text Summarization Model (ATSM)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">Proyecto de grado</a> &raquo;</li>
+      <li>extractiveSummary module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/extractiveSummary.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-extractiveSummary">
+<span id="extractivesummary-module"></span><h1>extractiveSummary module<a class="headerlink" href="#module-extractiveSummary" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">extractiveSummary.</span></span><span class="sig-name descname"><span class="pre">ExtractiveSummarization</span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase ExtractiveSummarization correspondiente al algoritmo base de metodo extractivo de resumen.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.calculate_average_score">
+<span class="sig-name descname"><span class="pre">calculate_average_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.calculate_average_score" title="Permalink to this definition"></a></dt>
+<dd><p>Metodo para calcular el threshold minimo de seleccion de oraciones relevantes</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">sentence_weight</dt>
+<dd class="field-odd"><p>Diccionario con el puntaje de cada oracion.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">average_score</dt>
+<dd class="field-odd"><p>Threshold con el puntaje de referencia para las oraciones.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.calculate_sentence_scores">
+<span class="sig-name descname"><span class="pre">calculate_sentence_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency_table</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.calculate_sentence_scores" title="Permalink to this definition"></a></dt>
+<dd><p>Metodo calcular el puntaje de las oraciones, basado en la tabla de frecuencia</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">sentences</dt>
+<dd class="field-odd"><p>Lista de oraciones del texto.</p>
+</dd>
+<dt class="field-even">frequency_table</dt>
+<dd class="field-even"><p>Diccionario que contiene la frequencia de las palabras.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">sentence_weight</dt>
+<dd class="field-odd"><p>Diccionario con el puntaje acumulado de cada oracion.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.create_frequency_table">
+<span class="sig-name descname"><span class="pre">create_frequency_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.create_frequency_table" title="Permalink to this definition"></a></dt>
+<dd><p>Metodo para crear la tabla de frecuencia</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">text_string</dt>
+<dd class="field-odd"><p>String que contiene el texto</p>
+</dd>
+<dt class="field-even">language</dt>
+<dd class="field-even"><p>Idioma del texto</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">frequency_table</dt>
+<dd class="field-odd"><p>Diccionario con la tabla de frecuencia de las palabras.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.get_article_summary">
+<span class="sig-name descname"><span class="pre">get_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.get_article_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Metodo encargado de seleccionar las oraciones que exceden el threshold establecido.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">sentences</dt>
+<dd class="field-odd"><p>Lista de oraciones del texto.</p>
+</dd>
+<dt class="field-even">sentence_weight</dt>
+<dd class="field-even"><p>Diccionario con el puntaje de cada oracion.</p>
+</dd>
+<dt class="field-odd">threshold</dt>
+<dd class="field-odd"><p>Puntaje de referencia para las oraciones.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">article_summary</dt>
+<dd class="field-odd"><p>Resumen generado de según el threshold.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="extractiveSummary.ExtractiveSummarization.run_article_summary">
+<span class="sig-name descname"><span class="pre">run_article_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#extractiveSummary.ExtractiveSummarization.run_article_summary" title="Permalink to this definition"></a></dt>
+<dd><p>Metodo general que unifica todos los metodos y genera el resumen.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">article</dt>
+<dd class="field-odd"><p>Texto que se desea resumir.</p>
+</dd>
+<dt class="field-even">language</dt>
+<dd class="field-even"><p>Idioma del texto.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">article_summary</dt>
+<dd class="field-odd"><p>Resumen del texto.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Summarizer.html" class="btn btn-neutral float-left" title="Summarizer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Roque Rodríguez, Adrian Lebreualt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

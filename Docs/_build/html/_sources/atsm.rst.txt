@@ -1,0 +1,7 @@
+atsm module
+===========
+
+.. automodule:: atsm
+   :members:
+   :undoc-members:
+   :show-inheritance:
