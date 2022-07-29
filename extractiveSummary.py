@@ -20,7 +20,7 @@ def create_frequency_table(text_string,language) -> dict:
 	"""
 	if language == 'ENG':
 		f = open('english')
-	else:
+	elif language == 'ESP':
 		f = open('spanish')
 	stopwds = []
 	for line in f:
@@ -79,7 +79,7 @@ def calculate_average_score(sentence_weight) -> int:
 	for entry in sentence_weight:
 		sum_values += sentence_weight[entry]
 	#getting sentence average value from source text
-	average_score = (sum_values / len(sentence_weight))
+	average_score = (sum_values / len(sentence_weight))*1.05
 	return average_score
 
 def get_article_summary(sentences, sentence_weight, threshold):
