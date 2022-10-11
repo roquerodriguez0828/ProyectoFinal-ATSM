@@ -1,18 +1,32 @@
-<!DOCTYPE html>
 <html>
+<html lang="en" dir="ltr">
 <head>
-	<title>Proyecto Final ISC</title>
+    <title>Text Summarizer | ATSM Project</title>
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-	<form action="/formPost" method="POST">
-		<textarea rows="5" cols="60" name="text" placeholder="Enter text"></textarea>
-		<br/>
-		<select name = "lang">
-			<option value = "ENG" selected>English</option>
-			<option value = "ESP">Español</option>
-		</select>
-		<br/>
-      <input type="submit" value="submit"/>
-    </form>
+	<section class="login">
+		<div class="login_box">
+			<div class="left">
+				<div class="contact">
+					<form action="/loginPost" method="POST">
+						<h3>SIGN IN</h3>
+						<input name="user" type="text" placeholder="USERNAME" required>
+						<input name="pass" type="password" placeholder="PASSWORD" required>
+						<button class="submit">LET'S GO</button>
+					</form>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right-text">
+					<h2>ATSM</h2>
+					<h5>DISCOVER THE POWER OF A SUMMARY</h5>
+				</div>
+				<div class="right-inductor"><img src="https://plataformavirtual.pucmm.edu.do//images/pucmmLogo-602x200.png" alt=""></div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

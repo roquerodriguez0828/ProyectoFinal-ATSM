@@ -12,9 +12,13 @@ def test():
 		req_Json = request.json
 		text = req_Json['text']
 		lang = req_Json['lang']
-		max_length = 150
-		min_length = 50
-		summary = summ.summarize(lang,text,max_length,min_length)
+		method = req_Json['method']
+		min_length = req_Json['min']
+		max_length = req_Json['max']
+		if(method == 'EXT'):
+			summary = ext.run_article_summary(text,lang)
+		else:
+			summary = summ.summarize(lang,text,max_length,min_length)
 		return jsonify({"response":summary})
 
 if __name__ == '__main__':
