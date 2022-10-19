@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Text Summarizer | ATSM Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="img/Marca PUCMM (Color).png" width="100%" height="50" alt="">
+            </a>
+            <form class="form-inline" >
+                <button class="btn btn-dark my-2 my-sm-0" name="logout" value="logout" ><i class="fas fa-user"></i><a class="logout" href="/"> Log Out</a></button>
+            </form>
+        </nav>
+        <form action="/formPost" method="POST">
+            <div class="main">
+                <ul class="controls">
+                    <li class="row">
+                        <i class="fas fa-language"></i>
+                        <select name = "lang" required>
+                            <option value = "ENG" selected>English</option>
+                            <option value = "ESP">Español</option>
+                        </select>
+                    </li>
+                    <li class="row">
+                        <i class="fas fa-terminal"></i>
+                        <select name = "method" required>
+                            <option value = "EXT" selected>Extractive</option>
+                            <option value = "ABS">Abstractive</option>
+                        </select>
+                    </li>
+                    <li class="row">
+                        <i class="fas fa-plus"></i>
+                        <input type="number" name="min"  value="50" required>
+                    </li>
+                    <li class="row">
+                        <i class="fas fa-minus"></i>
+                        <input type="number" name="max" value="150" required>
+                    </li>
+                    <li class="row">
+                        <i class="fas fa-paperclip"></i>
+                        <input type="file" name="textfile">
+                    </li>
+                </ul>
+                <div class="text-input">
+                    <textarea spellcheck="false" class="from-text" placeholder="Enter text" name="text" required><%= params.texto%></textarea>
+                    <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Summary" required><%= params.resumen%></textarea>
+                </div>
+                <div class="submission">
+                    <button class="submit col-md-6" name="tipo" value="resumen" type="submit"> <i class="fas fa-book"></i> Generate Summary</button>
+                    <button class="email col-md-6" name="tipo" value="correo" type="submit"> <i class="fas fa-envelope"></i> Send to Email</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
