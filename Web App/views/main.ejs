@@ -18,7 +18,7 @@
                 <button class="btn btn-dark my-2 my-sm-0" name="logout" value="logout" ><i class="fas fa-user"></i><a class="logout" href="/"> Log Out</a></button>
             </form>
         </nav>
-        <form action="/formPost" method="POST">
+        <form action="/formPost" method="POST" enctype="multipart/form-data">
             <div class="main">
                 <ul class="controls">
                     <li class="row">
@@ -49,8 +49,8 @@
                     </li>
                 </ul>
                 <div class="text-input">
-                    <textarea spellcheck="false" class="from-text" placeholder="Enter text" name="text" required><%= params.texto%></textarea>
-                    <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Summary" required><%= params.resumen%></textarea>
+                    <textarea spellcheck="false" class="from-text" placeholder="Enter text" name="text"><%= params.texto%></textarea>
+                    <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Summary"><%= params.resumen%></textarea>
                 </div>
                 <div class="submission">
                     <button class="submit col-md-6" name="tipo" value="resumen" type="submit"> <i class="fas fa-book"></i> Generate Summary</button>

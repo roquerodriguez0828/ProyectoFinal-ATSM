@@ -1,9 +1,14 @@
-const express = require("express")
+const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
+const upload = require('express-fileupload')
+const fs = require('fs');
+const { text } = require("body-parser");
+
 
 const app = express();
 
+app.use(upload())
 
 app.use(express.static("public"));
 app.use('css',express.static(__dirname+'public/css'))
@@ -22,19 +27,24 @@ app.get("/",(req,res)=>{
 	res.render('index')
 });
 
+app.get("/signup",(req,res)=>{
+	res.render('signup')
+});
 
-app.post("/loginPost",(req,res)=>{
 
-	const user = req.body.user
-	const pass = req.body.pass
+app.post("/signin",(req,res)=>{
+
+	const email = req.body.user
+	const password = req.body.pass
+
+	/*
 
 	if(user == "admin" && pass=="admin"){
 		res.redirect("/app");
 	}else{
 		res.redirect("/");
 	}
-
-    
+*/ 
 });
 
 app.get("/app",(req,res)=>{
@@ -47,8 +57,18 @@ app.get("/app",(req,res)=>{
 });
 
 app.post("/formPost",(req,res)=>{
-	console.log(req.body)
+	//console.log(req.body)
+
+
+
 	if(req.body.tipo == 'resumen'){
+
+		var text = req.body.text
+
+		if(req.body.text == '' && req.files){
+			text = req.files.textfile.data.toString('utf8');
+		}
+
 		var options = {
 			'method': 'POST',
 			'url': 'http://127.0.0.1:5000',
@@ -56,14 +76,14 @@ app.post("/formPost",(req,res)=>{
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				"text": req.body.text
+				"text": text
 				,"lang": req.body.lang
 				,"method":req.body.method
 				,"min":Number(req.body.min)
 				,"max":Number(req.body.max)
 			})
 	
-			}; 
+		}; 
 	
 		request(options, function (error, response) {
 		  if (error) {
@@ -72,14 +92,20 @@ app.post("/formPost",(req,res)=>{
 		  else {
 			summary = JSON.parse(response.body)
 			params={
-				texto:req.body.text,
+				texto:text,
 				resumen: summary.response
 			  }
 			  res.render('main',{params:params});
 		  }
 		});
 	}
-	
+	/*
+	if(req.files){
+		console.log(req.files.textfile.data.toString('utf8'));
+
+	}
+	*/
+
 });
 
 

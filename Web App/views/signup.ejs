@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Text Summarizer | ATSM Project</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/signup.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registro</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nombre Completo</span>
+            <input type="text" placeholder="Ingrese su nombre" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Usuario</span>
+            <input type="text" placeholder="Ingrese su usuario" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Correo Electrónico</span>
+            <input type="email" placeholder="Ingrese su correo" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Edad</span>
+            <input type="number" min="1" max="99" placeholder="Ingrese su edad" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contraseña</span>
+            <input type="password" placeholder="Ingrese su Contraseña" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirmar Contraseña</span>
+            <input type="password" placeholder="Confirme su Contraseña" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Sexo</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Masculino</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Femenino</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Otro</span>
+            </label>
+          </div>
+        </div>
+        <div class="gender-details">
+            <input type="radio" name="text_length" id="text-1">
+            <input type="radio" name="text_length" id="text-2">
+            <input type="radio" name="text_length" id="text-3">
+            <span class="gender-title">Cuál es la longitud de los textos que sueles leer?</span>
+            <div class="category">
+                <label for="text-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Textos Cortos</span>
+                </label>
+                <label for="text-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Textos Intermedios</span>
+                </label>
+                <label for="text-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Textos Largos</span>
+                </label>
+            </div>
+        </div>
+        <div class="gender-details">
+            <input type="radio" name="read_frequency" id="frq-1">
+            <input type="radio" name="read_frequency" id="frq-2">
+            <input type="radio" name="read_frequency" id="frq-3">
+            <span class="gender-title">Qué tan frecuente sueles leer libros/textos?</span>
+            <div class="category">
+                <label for="frq-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Con Poca Frecuencia</span>
+                </label>
+                <label for="frq-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Ocacionalmente</span>
+                </label>
+                <label for="frq-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Muy Frecuente</span>
+                </label>
+            </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Registrar">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
