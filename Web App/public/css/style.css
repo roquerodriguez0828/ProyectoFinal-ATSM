@@ -146,12 +146,43 @@ body{
     box-shadow: 0px 9px 15px -11px rgba(158,202,240,1);
   }
 
-  a .logout{
+
+  .copy{
+    width: 100%;
+    height: 100%;
+  
+    padding: 10px 50px;
+
+    border: none;
+    border-radius: 8px;
+    margin: auto;
+    background: #005fff;
+    color: #fff;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 9px 15px -11px rgba(158,202,240,1);
+    -moz-box-shadow: 0px 9px 15px -11px rgba(158,202,240,1);
+    box-shadow: 0px 9px 15px -11px rgba(158,202,240,1);
+  }
+
+  .logout{
     color: white;
     text-decoration: none; 
   }
 
+  .logout:hover{
+    color: gainsboro;
+    text-decoration: none; 
+  }
   
   a .logout:hover{
     all: unset;
+  }
+
+
+  .range {
+    width: 50px;
+  }
+
+  .file {
+    width: 170px;
   }
