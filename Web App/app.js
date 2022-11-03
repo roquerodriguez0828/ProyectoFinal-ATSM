@@ -6,8 +6,12 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const { text } = require("body-parser");
+const mongoose = require('mongoose');
+const User = require('./model/user')
 require("dotenv").config();
 
+
+const mongo_uri = 'mongodb://localhost:27017/atsm'
 const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -24,6 +28,17 @@ const sendMail = async (msg) => {
 		}
 	}
 };
+
+
+mongoose.connect(mongo_uri,(err)=>{
+	if(err){
+		throw err;
+	}else {
+		console.log('Successfully connected to DB')
+	}
+});
+
+
 
 const app = express();
 
@@ -52,7 +67,7 @@ app.set('views','./views')
 
 let credentials = {
 
-	user_id: 1234,
+	username: 1234,
 	email: 'rrodriguezcabreja@outlook.com'
 }
 
@@ -66,24 +81,73 @@ app.get("/signup",(req,res)=>{
 });
 
 
-app.post("/signup",(req,res)=>{
+app.post("/signup", async (req,res)=>{
 	console.log(req.body)
-	res.redirect("/")
+	const username = req.body.user;
+	const password = req.body.password;
+	const email = req.body.email;
+
+	if (!username || typeof username !== 'string') {
+		return res.json({ status: 'error', error: 'Invalid username' })
+	}
+
+	if (password.length < 5 ) {
+		return res.json({ status: 'error', error: 'Password too small. Should be atleat 6 characters' })
+	}
+
+
+	try{
+		const response = await User.create({
+			username,
+			email,
+			password
+		})
+
+		console.log(response)
+	}catch(error){
+		if(error.code == 11000){
+			return res.json({status: 'error', error: 'Username already in use.'})
+		}
+		throw error
+	}
+	//res.redirect("/")
 });
 
 app.post("/signin",(req,res)=>{
 
-	const user = req.body.user
-	const pass = req.body.pass
+	const username = req.body.user
+	const password = req.body.pass
 
-	
+	try{
+		User.find({username},(err,result)=>{
+			if(err){
+				console.log(err);
+			}else {
+				if(result.length>0 && result[0].password == password){
+					credentials.email = result[0].email;
+					credentials.username = username;
+					req.session.credentials = credentials;
+					req.session.save();
+					res.redirect("/app");
+				}else {
+					console.log("WRONG CREDENTIALS")
+				}	
+			}
+
+		});
+	}catch(error){
+		console.log(error)
+		throw error
+	}
+
+	/*
 	if(user == "admin" && pass=="admin"){
 		req.session.credentials = credentials;
 		req.session.save();
 		res.redirect("/app");
 	}else{
 		res.redirect("/");
-	}
+	}*/
  
 });
 

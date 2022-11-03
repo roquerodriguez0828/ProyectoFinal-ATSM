@@ -2,7 +2,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, BertTokenizerFast, EncoderDecoderModel
 
-max_tokens = 6000
+max_tokens = 150000
 
 def Settings_ESP():
 	"""
